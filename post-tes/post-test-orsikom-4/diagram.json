@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "muhammad fajar08",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -165.2, "left": 345.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -163.8,
+      "left": -131.4,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -235.02,
+      "left": 110.68,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -224.4,
+      "left": -63.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -224.4,
+      "left": -25,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "btn1:2.r", "uno:5V", "red", [ "v317", "h264.8" ] ],
+    [ "btn1:1.r", "uno:GND.1", "black", [ "v96.2", "h201.3" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-67.2", "v326.4", "h-109.5" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v172.8", "h163.3" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-38.4", "v326.5", "h-147.8" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v172.8", "h124.9" ] ],
+    [ "sevseg1:COM.1", "uno:GND.2", "black", [ "v86.4", "h144", "v249.6", "h-109.5" ] ],
+    [ "led1:A", "uno:12", "limegreen", [ "v144", "h172.3" ] ],
+    [ "led2:A", "uno:11", "magenta", [ "v153.6", "h143.4" ] ],
+    [ "sevseg1:G", "uno:10", "purple", [ "v-18.36", "h-19.2", "v180.72", "h56.9" ] ],
+    [ "sevseg1:F", "uno:9", "white", [ "v-8.76", "h-19.2", "v182.4", "h56.8" ] ],
+    [ "sevseg1:E", "uno:8", "gray", [ "v115.2", "h57.2" ] ],
+    [ "sevseg1:D", "uno:7", "violet", [ "v124.8", "h63.6" ] ],
+    [ "sevseg1:C", "uno:6", "blue", [ "v134.4", "h53.9" ] ],
+    [ "sevseg1:B", "uno:5", "green", [ "v-8.76", "h9.6", "v182.4", "h44.2" ] ],
+    [ "btn1:1.l", "uno:2", "#8f4814", [ "h19.2", "v153.6", "h303.1" ] ],
+    [ "servo1:PWM", "uno:3", "orange", [ "h0" ] ],
+    [ "sevseg1:A", "uno:4", "gold", [ "v-18.36", "h28.8", "v182.4", "h44.1" ] ]
+  ],
+  "dependencies": {}
+}
