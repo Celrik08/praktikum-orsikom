@@ -4,4 +4,6 @@
 
 [projek kedua Seven Segment Dsiplay](https://wokwi.com/projects/443720720106835969)
 
-[projek ketigas button](https://wokwi.com/projects/444520542987238401)
+[projek ketiga button](https://wokwi.com/projects/444520542987238401)
+
+[projek keempat button](https://wokwi.com/projects/445041039938415617)
