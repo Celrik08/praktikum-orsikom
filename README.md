@@ -1,5 +1,11 @@
 <h1 align="center">Membuat Dasar Program Arduino</h1>
 
+<h2 align="left">Post Test</h2>
+
+[Riview pertama input](https://wokwi.com/projects/445778887398627329)
+
+<h3 align="left">Post Test</h3>
+
 [projek pertama lampu merah](https://wokwi.com/projects/443085979924043777)
 
 [projek kedua Seven Segment Dsiplay](https://wokwi.com/projects/443720720106835969)
