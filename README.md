@@ -4,7 +4,7 @@
 
 [Riview pertama input](https://wokwi.com/projects/445778887398627329)
 
-<h3 align="left">Post Test</h3>
+<h2 align="left">Post Test</h2>
 
 [projek pertama lampu merah](https://wokwi.com/projects/443085979924043777)
 
