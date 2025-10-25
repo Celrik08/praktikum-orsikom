@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "muhammad fajar08",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -81.42,
+      "left": -4.52,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.6,
+      "left": 99.8,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "sevseg1:A", "uno:2", "#8f4814", [ "v-8.76", "h19.2", "v153.6", "h187.9" ] ],
+    [ "sevseg1:B", "uno:3", "red", [ "v0.84", "h19.2", "v134.4", "h168.8" ] ],
+    [ "sevseg1:C", "uno:4", "orange", [ "v57.6", "h188.1" ] ],
+    [ "sevseg1:D", "uno:5", "gold", [ "v48", "h197.8" ] ],
+    [ "sevseg1:E", "uno:6", "green", [ "v38.4", "h197.9" ] ],
+    [ "sevseg1:F", "uno:7", "blue", [ "v-8.76", "h57.6", "v105.6", "h121.2" ] ],
+    [ "sevseg1:G", "uno:8", "violet", [ "v-18.36", "h76.8", "v105.6", "h95.6" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "sevseg1:COM.1", "uno:GND.1", "black", [ "v86.4", "h95.7" ] ],
+    [ "led1:A", "uno:9", "gray", [ "v105.6", "h37.6" ] ]
+  ],
+  "dependencies": {}
+}
