@@ -123,7 +123,7 @@ void loop() {
       if (isNumber) {
         int angka = input.toInt();
         if (angka == 117) {
-          Serial.println("Password benar!");
+          Serial.println("Password benar! Pintu akan terkunci dalam 9 detik");
           digitalWrite(hijau, HIGH);
           digitalWrite(merah, LOW);
           servo1.write(180);
