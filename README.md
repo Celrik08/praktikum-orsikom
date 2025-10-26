@@ -12,4 +12,6 @@
 
 [projek ketiga button](https://wokwi.com/projects/444520542987238401)
 
-[projek keempat button](https://wokwi.com/projects/445041039938415617)
+[projek keempat servo](https://wokwi.com/projects/445041039938415617)
+
+[projek kelima input string](https://wokwi.com/projects/445780718052121601)

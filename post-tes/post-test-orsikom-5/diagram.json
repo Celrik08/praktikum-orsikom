@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "muhammad fajar08",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 183, "left": 95.4, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -194.8,
+      "left": 252.4,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo2", "top": -194, "left": 19.2, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -62.22,
+      "left": 81.88,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -61.2,
+      "left": 243.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -61.2,
+      "left": 195.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -29.4,
+      "left": 319.8,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "servo1:PWM", "uno:3", "orange", [ "h57.6", "v307", "h-157.6" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h144", "v537.5", "h-311" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h96", "v518.4", "h-253.5" ] ],
+    [ "servo2:GND", "uno:GND.2", "black", [ "h-28.8", "v537.6", "h274.5" ] ],
+    [ "servo2:V+", "uno:5V", "red", [ "h-38.4", "v537.7", "h274.6" ] ],
+    [ "servo2:PWM", "uno:5", "green", [ "v278.6", "h284.2" ] ],
+    [ "btn1:2.r", "uno:GND.1", "black", [ "h-29", "v144.2", "h-105.9" ] ],
+    [ "btn1:1.l", "uno:2", "red", [ "v-19.2", "h67.2", "v230.4", "h-100.1" ] ],
+    [ "sevseg1:A", "uno:4", "gold", [ "v-8.76", "h19.2", "v228.72", "h178.5" ] ],
+    [ "sevseg1:B", "uno:6", "blue", [ "h19.2", "v202.44", "h149.9" ] ],
+    [ "sevseg1:C", "uno:7", "violet", [ "v124.8", "h169.2" ] ],
+    [ "sevseg1:D", "uno:8", "gray", [ "v115.2", "h172.4" ] ],
+    [ "sevseg1:E", "uno:9", "white", [ "v105.6", "h172" ] ],
+    [ "sevseg1:F", "uno:10", "purple", [ "v-8.76", "h-19.2", "v172.8", "h172.1" ] ],
+    [ "sevseg1:G", "uno:11", "magenta", [ "v-18.36", "h-19.2", "v172.8", "h172.2" ] ],
+    [ "sevseg1:COM.1", "uno:GND.1", "black", [ "v163.2", "h105.3" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v96", "h-47.6", "v76.8", "h-0.3" ] ],
+    [ "led1:A", "uno:12", "limegreen", [ "v105.6", "h-38.9" ] ],
+    [ "led2:A", "uno:13", "yellow", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
