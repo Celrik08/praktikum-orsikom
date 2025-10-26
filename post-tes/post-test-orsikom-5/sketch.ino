@@ -67,11 +67,13 @@ void loop() {
   bool adaInput = false;
 
   while (true) {
-    while (Serial.available() > 0) Serial.read();
+
     delay(100);
     Serial.println("Masukkan Password:");
 
     bool kembaliKeInput = false;
+    adaInput = false;
+
     for (int detik = 5; detik >= 1; detik--) {
       tampilAngka(detik);
       delay(1000);
@@ -111,67 +113,49 @@ void loop() {
 
     if (kembaliKeInput) continue;
 
-    if (adaInput && input.length() > 0) {
-      bool isNumber = true;
-      for (int i = 0; i < input.length(); i++) {
-        if (!isDigit(input[i])) {
-          isNumber = false;
-          break;
-        }
+    if (!adaInput || input.length() == 0) continue;
+
+    bool isNumber = true;
+    for (int i = 0; i < input.length(); i++) {
+      if (!isDigit(input[i])) {
+        isNumber = false;
+        break;
       }
+    }
 
-      if (isNumber) {
-        int angka = input.toInt();
-        if (angka == 117) {
-          Serial.println("Password benar! Pintu akan terkunci dalam 9 detik");
-          digitalWrite(hijau, HIGH);
-          digitalWrite(merah, LOW);
-          servo1.write(180);
-          servo2.write(0);
+    if (isNumber) {
+      int angka = input.toInt();
+      if (angka == 117) {
+        Serial.println("Password benar! Pintu akan terkunci dalam 9 detik");
+        digitalWrite(hijau, HIGH);
+        digitalWrite(merah, LOW);
+        servo1.write(180);
+        servo2.write(0);
 
-          for (int detik = 9; detik >= 1; detik--) {
-            tampilAngka(detik);
-            delay(1000);
-            if (detik == 1) {
-              servo1.write(90);
-              servo2.write(90);
-            }
+        for (int detik = 9; detik >= 1; detik--) {
+          tampilAngka(detik);
+          delay(1000);
+          if (detik == 1) {
+            servo1.write(90);
+            servo2.write(90);
           }
-
-          for (int i = 0; i < 7; i++) digitalWrite(segmentPins[i], LOW);
-          digitalWrite(merah, HIGH);
-          digitalWrite(hijau, LOW);
-
-          Serial.println("");
-          Serial.println("Smart Lock Siap. Tekan tombol untuk memulai");
-
-          while (digitalRead(tombol) == LOW) {}
-          delay(50);
-          while (digitalRead(tombol) == HIGH) {}
-          delay(300);
-          programStarted = true;
-          continue;
         }
-        
-        else {
-          Serial.println("Password salah!");
-          for (int i = 0; i < 7; i++) digitalWrite(segmentPins[i], LOW);
-          digitalWrite(merah, HIGH);
-          digitalWrite(hijau, LOW);
 
-          Serial.println("");
-          Serial.println("Smart Lock Siap. Tekan tombol untuk memulai");
+        for (int i = 0; i < 7; i++) digitalWrite(segmentPins[i], LOW);
+        digitalWrite(merah, HIGH);
+        digitalWrite(hijau, LOW);
 
-          while (digitalRead(tombol) == LOW) {}
-          delay(50);
-          while (digitalRead(tombol) == HIGH) {}
-          delay(300);
-          continue;
-        }
-      }
-      
-      else {
-        Serial.println("Input bukan angka!");
+        Serial.println("");
+        Serial.println("Smart Lock Siap. Tekan tombol untuk memulai");
+
+        while (digitalRead(tombol) == LOW) {}
+        delay(50);
+        while (digitalRead(tombol) == HIGH) {}
+        delay(300);
+        programStarted = true;
+        continue;
+      } else {
+        Serial.println("Password salah!");
         for (int i = 0; i < 7; i++) digitalWrite(segmentPins[i], LOW);
         digitalWrite(merah, HIGH);
         digitalWrite(hijau, LOW);
@@ -185,6 +169,20 @@ void loop() {
         delay(300);
         continue;
       }
+    } else {
+      Serial.println("Input bukan angka!");
+      for (int i = 0; i < 7; i++) digitalWrite(segmentPins[i], LOW);
+      digitalWrite(merah, HIGH);
+      digitalWrite(hijau, LOW);
+
+      Serial.println("");
+      Serial.println("Smart Lock Siap. Tekan tombol untuk memulai");
+
+      while (digitalRead(tombol) == LOW) {}
+      delay(50);
+      while (digitalRead(tombol) == HIGH) {}
+      delay(300);
+      continue;
     }
 
     while (digitalRead(tombol) == HIGH) {}
