@@ -1,6 +1,6 @@
 <h1 align="center">Membuat Program Dasar Arduino</h1>
 
-<h2 align="left">Post Test</h2>
+<h2 align="left">Riview</h2>
 
 [Riview pertama input](https://wokwi.com/projects/445778887398627329)
 
