@@ -1,4 +1,4 @@
-<h1 align="center">Membuat Dasar Program Arduino</h1>
+<h1 align="center">Membuat Program Dasar Arduino</h1>
 
 <h2 align="left">Post Test</h2>
 
